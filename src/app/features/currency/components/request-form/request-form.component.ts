@@ -25,7 +25,7 @@ export class RequestFormComponent {
     };
     this.currencyService.getCurrencyValue(request).subscribe({
       next: (response) => (this.result = response.value),
-      error: () => alert('Nie znaleziono waluty lub wystąpił błąd'),
+      error: () => alert('Currency not found or error occurred'),
     });
   }
 }

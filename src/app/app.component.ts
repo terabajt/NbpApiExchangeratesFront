@@ -11,4 +11,6 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'NBPApiCurrency';
+  currency!: string;
+  name!: string;
 }

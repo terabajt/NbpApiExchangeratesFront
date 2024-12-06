@@ -6,6 +6,6 @@ export type CurrencyRequest = {
 export type CurrencyResponse = {
   currency: string;
   name: string;
-  date: string;
+  date: Date;
   value: number;
 };

@@ -18,7 +18,10 @@ export class RequestListComponent implements OnInit {
   ngOnInit() {
     this.currencyService.getAllRequests().subscribe({
       next: (data) => (this.requests = data),
-      error: () => alert('Błąd podczas pobierania danych'),
+      error: () => {
+        this.requests = [];
+        alert('Error while downloading data');
+      },
     });
   }
 }

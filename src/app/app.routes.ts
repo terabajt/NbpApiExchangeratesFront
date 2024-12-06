@@ -3,7 +3,7 @@ import { RequestFormComponent } from './features/currency/components/request-for
 import { RequestListComponent } from './features/currency/components/request-list/request-list.component';
 
 export const routes: Routes = [
-  { path: 'form', component: RequestFormComponent },
-  { path: 'list', component: RequestListComponent },
-  { path: '', redirectTo: '/form', pathMatch: 'full' },
+    { path: 'form', component: RequestFormComponent },
+    { path: 'list', component: RequestListComponent },
+    { path: '', redirectTo: '/form', pathMatch: 'full' },
 ];

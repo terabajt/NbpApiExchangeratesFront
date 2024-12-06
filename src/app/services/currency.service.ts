@@ -5,21 +5,21 @@ import { CurrencyRequest, CurrencyResponse } from '../models/currency.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class CurrencyService {
-  private BASE_URL = environment.apiCurrenciesUrl;
+    private BASE_URL = environment.apiCurrenciesUrl;
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  getCurrencyValue(request: CurrencyRequest): Observable<CurrencyResponse> {
-    return this.http.post<CurrencyResponse>(
-      `${this.BASE_URL}/get-current-currency-value-command`,
-      request
-    );
-  }
+    getCurrencyValue(request: CurrencyRequest): Observable<CurrencyResponse> {
+        return this.http.post<CurrencyResponse>(
+            `${this.BASE_URL}/get-current-currency-value-command`,
+            request,
+        );
+    }
 
-  getAllRequests(): Observable<CurrencyResponse[]> {
-    return this.http.get<CurrencyResponse[]>(`${this.BASE_URL}/requests`);
-  }
+    getAllRequests(): Observable<CurrencyResponse[]> {
+        return this.http.get<CurrencyResponse[]>(`${this.BASE_URL}/requests`);
+    }
 }

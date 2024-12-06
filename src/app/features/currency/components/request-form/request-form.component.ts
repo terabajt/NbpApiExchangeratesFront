@@ -5,27 +5,27 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-request-form',
-  standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './request-form.component.html',
-  styleUrl: './request-form.component.scss',
+    selector: 'app-request-form',
+    standalone: true,
+    imports: [FormsModule, CommonModule],
+    templateUrl: './request-form.component.html',
+    styleUrl: './request-form.component.scss',
 })
 export class RequestFormComponent {
-  currency = '';
-  name = '';
-  result: number | null = null;
+    currency = '';
+    name = '';
+    result: number | null = null;
 
-  constructor(private currencyService: CurrencyService) {}
+    constructor(private currencyService: CurrencyService) {}
 
-  submit() {
-    const request: CurrencyRequest = {
-      currency: this.currency,
-      name: this.name,
-    };
-    this.currencyService.getCurrencyValue(request).subscribe({
-      next: (response) => (this.result = response.value),
-      error: () => alert('Currency not found or error occurred'),
-    });
-  }
+    submit() {
+        const request: CurrencyRequest = {
+            currency: this.currency,
+            name: this.name,
+        };
+        this.currencyService.getCurrencyValue(request).subscribe({
+            next: response => (this.result = response.value),
+            error: () => alert('Currency not found or error occurred'),
+        });
+    }
 }
